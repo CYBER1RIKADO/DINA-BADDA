@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: nethus-love
+    env: static
+    buildCommand: ""
+    staticPublishPath: public
