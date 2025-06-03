@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DINA BADDA💗🦄</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      color: #800000;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    header, footer {
+      background: #ffb6c1;
+      text-align: center;
+      padding: 15px;
+    }
+    .ad-feed {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .ad-feed img {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .fixed-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .fixed-buttons a {
+      background: #ff69b4;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+    .fixed-buttons a:hover {
+      background: #ff1493;
+    }
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+      opacity: 0.6;
+      border-radius: 50% 50% 0 0;
+      z-index: 1;
+    }
+    .heart::after, .heart::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes floatUp {
+      0% {
+        bottom: -30px;
+        left: calc(50% + var(--offset));
+        opacity: 0.8;
+      }
+      100% {
+        bottom: 100%;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>𝐂 𝐘 𝐁 𝕽 - 𝐑 𝐈 𝐊 𝐀 𝐃 𝐎 𝕳</h1>
+    <p>Enjoy endless pics, contact me for video calls🏳️‍⚧️</p>
+  </header>
 
+  <div class="ad-feed" id="adFeed">
+    <!-- Ads load here -->
+  </div>
+
+  <div class="fixed-buttons">
+    <a href="https://wa.me/94725329411?text=𝘏𝘌𝘓𝘓𝘖💖𝘖𝘞𝘕𝘌𝘙" target="_blank">Contact Owner 🦄</a>
+    <a href="https://wa.me/94725329411?text=I_LOVE_U💗" target="_blank">Chat with Me 💗</a>
+  </div>
+
+  <footer>
+    <p>© 2025 DINA BADDA . All rights reserved.</p>
+  </footer>
+
+  <audio autoplay loop hidden>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+// Developed by Chanuka-KL
+// Do not Share js without permission.
+// LICENSED INDEX 2025
+    async function loadAd() {
+      try {
+        const res = await fetch("https://api.waifu.pics/nsfw/trap");
+        const data = await res.json();
+        const img = document.createElement("img");
+        img.src = data.url;
+        document.getElementById("adFeed").prepend(img);
+      } catch (e) {
+        console.error("Ad load failed", e);
+      }
+    }
+
+    // Load first ad
+    loadAd();
+    // Load ads every 5 seconds
+    setInterval(loadAd, 5000);
+
+    
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.setProperty("--offset", `${Math.random() * 100 - 50}%`);
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 800);
+  </script>
+</body>
+  </html>
